@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Exercicio1 {
+	public static void main(String[]args) {
+		double v,vn;
+		int m,i=1;
+Scanner in = new Scanner(System.in);
+		System.out.println("Digite o valor investido");
+		v = in.nextDouble();
+		System.out.println("Digite o número de meses que o dinheiro ficou investido");
+		m = in.nextInt();
+		System.out.println(juros(v,m));
+		
+		}
+	public static double juros(double v, int m) {
+		
+		for (int i=1;i<=m;i++) {
+			v=v*1.01;
+		}
+		
+		return v;
+		
+	}
+		
+
+}

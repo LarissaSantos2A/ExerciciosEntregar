@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Exercicio2 {
+	public static void main (String args []) {
+		Scanner in = new Scanner(System.in);
+		double v,ju;
+		int pa,re = 0;
+		System.out.println("Informe o valor total  que irá pagar: ");
+		v=in.nextDouble();
+		System.out.println("Informe a forma de pagamento: ");
+		System.out.println("1 A vista");
+		System.out.println("2 Parcelar em 2x");
+		if (v>=100) {
+		System.out.println("3 Pacelar de 3 à 10x");
+		}
+		re=in.nextInt();
+		if (re==3) {
+			     System.out.println("Quantas parcelas você deseja pagar?");
+			pa=in.nextInt();
+			parce10 (v,pa);
+		}
+		else if(re==2) {
+			parce2(v);
+		}
+		else if(re==1) {
+			avista(v);
+		}
+	
+	}
+	       public static void avista (double v) {
+		
+		    double d = v;
+		d = d*10/100;
+		v=v-d;
+		
+		System.out.println("O total que irá pagar é: "+v);
+	}
+	
+	public static void parce2 (double v) {
+		v= v/2;
+		
+		System.out.println("O valor total a pagar parcelado em 2x é: "+v);
+	}
+	
+	public static void parce10 (double v, int pa) {
+		v=v/pa;
+		double ju=0;
+		
+		for (int i=1;i<=pa;i++) {
+			ju = pa*0.03;
+		}
+		ju= ju*pa;
+		v=v+ju;
+		System.out.printf("O valor total a pagar é: %.2f",v);
+	}
+ 	
+	
+}
